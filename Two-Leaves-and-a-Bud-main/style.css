@@ -1,0 +1,1919 @@
+@font-face {
+    font-family: font-1;
+    src: url(./fonts/RobotoMono-Regular.ttf);
+}
+
+@font-face {
+    font-family: font-2;
+    src: url(./fonts/RecklessCondensedS-TRIAL-Book.woff);
+}
+
+@font-face {
+    font-family: font-3;
+    src: url(./fonts/figtree_n4.3c0838aba1701047e60be6a99a1b0a40ce9b8419.woff2);
+}
+
+@font-face {
+    font-family: font-4;
+    src: url(./fonts/midnight-sans-rd-12-medium-trial.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+
+.color-1 {
+    background-color: #C1EE90;
+}
+
+.color-2 {
+    background-color: #FFD884;
+}
+
+.color-3 {
+    background-color: #B0E8C1;
+}
+
+.color-4 {
+    background-color: #C1E4F8;
+}
+
+.color-5 {
+    background-color: #BFE571;
+}
+
+.color-6 {
+    background-color: #FFCB96;
+}
+
+.color-7 {
+    background-color: #FFD1B8;
+}
+
+.color-8 {
+    background-color: #CDE2FF;
+}
+
+.color-9 {
+    background-color: #ADE089;
+}
+
+.color-10{
+    background-color: #f5af8a ;
+}
+.color-11{
+    background-color: #abdf74 ;
+}
+.color-12{
+    background-color: #ffd266 ;
+}
+.color-13{
+    background-color: #ade674 ;
+}
+.color-14{
+    background-color: #d9c2e1 ;
+}
+
+.color-15{
+    background-color: #ea6d44 ;
+}
+
+.color-16{
+    background-color: #73bc25 ;
+}
+
+.color-17{
+    background-color: #ffb502 ;
+}
+
+.color-18{
+    background-color: #8ac045 ;
+}
+
+.color-19{
+    background-color: #c790dc ;
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+}
+
+.nav-top {
+    background-color: #2a2857;
+    font-size: .8vw;
+    color: #FBF9FB;
+    padding: .5vw 0;
+    display: flex;
+    justify-content: center;
+    font-family: font-1;
+    font-size: .8rem;
+
+
+}
+
+.nav-bottom {
+    /* width: min(90% , 1440px); */
+    width: 95%;
+    padding: .5vw 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 1vw;
+    border: 1px solid black;
+    background-color: #FBF9FB;
+    position: absolute;
+    top: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all ease .5s;
+}
+
+.nav-bottom.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0;
+    z-index: 999;
+    transform: translateX(0);
+}
+
+.nav-bottom .nav-left {
+    width: 40%;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    font-size: clamp(2rem, 2vw, 3rem);
+    /* over here we have use lamp as it help us to make the thing responsive as it is taking 3 input 1 -> current size  | 2 -> */
+    font-family: font-2;
+}
+
+.nav-bottom .nav-left .circle-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #c1e4f8;
+    border-radius: 50%;
+    border: 1px solid #000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-bottom .nav-left h5 {
+    font-weight: 100;
+    position: relative;
+    transition: all ease .5s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-bottom .nav-left h5:hover {
+    cursor: pointer;
+}
+
+.nav-bottom .nav-left h5:hover .circle-icon {
+    background-color: #ffb502;
+}
+
+
+.nav-bottom .nav-left .circle-icon i {
+    transition: transform 0.3s ease;
+}
+
+.nav-bottom .nav-left h5:hover .circle-icon i {
+    transform: rotate(180deg);
+}
+
+
+.nav-bottom .nav-left h5:nth-last-child(1) {
+    display: none;
+}
+
+.nav-bottom .nav-left h5:nth-last-child(2):hover {
+    cursor: pointer;
+}
+
+.nav-bottom .nav-left h5:nth-last-child(2)::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all ease .5s;
+
+}
+
+.nav-bottom .nav-left h5:nth-last-child(2):hover::after {
+    width: 100%;
+
+}
+
+.nav-bottom .nav-right {
+    width: 40%;
+    display: flex;
+    gap: 2vw;
+    align-items: center;
+    justify-content: end;
+    font-family: font-1;
+
+    font-size: clamp(.5rem, 1vw, 2.5rem);
+}
+
+.nav-bottom .nav-right h5 {
+    position: relative;
+    transition: all ease .5s;
+}
+
+
+.nav-bottom .nav-right h5:hover {
+    cursor: pointer;
+}
+
+.nav-bottom .nav-right h5::after {
+    content: "";
+    width: 0;
+    height: 1px;
+    background-color: #000;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    transition: all ease .5s;
+
+}
+
+.nav-bottom .nav-right h5:hover::after {
+    width: 100%;
+
+}
+
+
+.nav-bottom .nav-right .cart-icon svg {
+    transition: all ease .5s;
+}
+
+
+.nav-bottom .nav-right .cart-icon svg:hover {
+    transform: scale(0.8);
+    cursor: pointer;
+}
+
+
+
+.nav-bottom .nav-right .cart {
+    display: flex;
+    position: relative;
+
+}
+
+.nav-bottom .nav-right .cart .cart-num {
+    width: 20px;
+    height: 20px;
+    background-color: #ffb502;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 4px;
+    right: -6px;
+
+}
+
+
+
+.section-1 {
+    min-height: 90vh;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/AlpineBerry.webp?v=1774284236&width=1280");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+
+    align-items: end;
+    padding: 2vw;
+
+}
+
+.section-1 .content {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #FBF9FB;
+}
+
+.section-1 .content h1 {
+    font-size: 5.5vw;
+    font-family: font-2;
+    font-weight: 300;
+
+}
+
+.section-1 .content p {
+    font-size: 1.3vw;
+    font-family: font-3;
+}
+
+.section-1 .content .btn {
+    background-color: #2a2857;
+    padding: 15px 25px;
+    color: #FBF9FB;
+    width: 200px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    font-family: font-3;
+    border: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: all ease .5s;
+}
+
+
+.section-1 .content .btn:hover {
+    cursor: pointer;
+    color: #000000;
+}
+
+.section-1 .content .btn::after {
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all ease .5s;
+    border: #000;
+
+}
+
+.section-1 .content .btn:hover::after {
+    width: 100%;
+}
+
+.section-2 {
+    width: 100%;
+    height: 100%;
+    background-color: #fbf9ec;
+    padding: 6vw 2vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6vw;
+}
+
+
+.section-2 .sc-header {
+    width: 100%;
+    text-align: center;
+    padding: 0 18vw;
+
+}
+
+.section-2 .sc-header span {
+    font-style: italic;
+}
+
+
+.section-2 .sc-header h2 {
+    font-size: 4.5vw;
+    font-family: font-2;
+    font-weight: 200;
+}
+
+
+.section-2 .sc-sub-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section-2 .sc-sub-header h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #daaeea;
+    padding: 0 1vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+
+.section-2 .products {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+
+
+}
+
+.section-2 .products .cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 2vw;
+    transition: transform .5s ease;
+
+
+}
+
+.section-2 .products .cards .card {
+    width: 22vw;
+    /* height: 35vw; */
+    aspect-ratio: 1 / 1.5;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+
+.section-2 .products .cards .card .card-img {
+    width: 100%;
+    height: 70%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    position: relative;
+
+}
+
+.section-2 .products .cards .card .card-img img {
+    width: 250px;
+    transition: .5s;
+}
+
+.section-2 .products .cards .card .card-img img:hover {
+    transform: scale(1.2);
+
+}
+
+.section-2 .products .cards .card .card-img .strip-card {
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: .5vw 1vw;
+    font-family: font-4;
+    font-size: 1.5vw;
+    top: 5%;
+    left: 5%;
+
+}
+
+.section-2 .products .cards .card .card-img .strip-rateing {
+    position: absolute;
+    border-radius: 5px;
+    padding: .5vw 1vw;
+    font-family: font-3;
+    font-size: 1vw;
+    top: 5%;
+    right: 5%;
+
+}
+
+.section-2 .products .cards .card .card-img .strip-btn {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #000;
+    border-radius: 5px;
+    padding: .8vw .8vw;
+    font-family: font-3;
+    font-size: 1.2vw;
+    bottom: 5%;
+    right: 5%;
+    justify-content: center;
+    align-items: center;
+    transition: all ease .5s;
+
+}
+
+.section-2 .products .cards .card .card-img .strip-btn:hover {
+    background-color: #2a2857;
+    color: #fff;
+}
+
+
+
+.section-2 .products .cards .card .card-disc {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.section-2 .products .cards .card .card-disc h5 {
+    font-family: font-2;
+    font-size: 2vw;
+    font-weight: 100;
+}
+
+.section-2 .products .cards .card .card-disc p {
+    font-family: font-3;
+    font-size: 1vw;
+    font-weight: 200;
+}
+
+.section-2 .products .movment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-2 .products .movment .c-left,
+.section-2 .products .movment .c-right {
+    width: 50px;
+    height: 50px;
+    background-color: #c1e4f8;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+
+}
+
+.section-2 .products .movment .c-left i,
+.section-2 .products .movment .c-right i {
+    font-size: 2vw;
+}
+
+.section-2 .products .movment .c-left:hover,
+.section-2 .products .movment .c-right:hover {
+    background-color: #ffb502;
+    cursor: pointer;
+}
+
+.section-2 .products .all-tea-btn {
+    background-color: rgb(42, 40, 87);
+    padding: 15px 25px;
+    color: rgb(251, 249, 251);
+    width: 200px;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    font-family: font-3;
+    border: 1px solid transparent;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    transition: 0.5s;
+}
+
+
+.section-2 .products .all-tea-btn:hover {
+    cursor: pointer;
+    color: #000000;
+}
+
+.section-2 .products .all-tea-btn::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+
+.section-2 .products .all-tea-btn:hover::after {
+    width: 100%;
+}
+
+
+.section-3 {
+    width: 100%;
+    height: 100%;
+    background-color: #fbf9ec;
+    padding: 6vw 18vw;
+    border-top: 2px solid black;
+
+}
+
+
+.section-3 .sc-3-header {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+}
+
+.section-3 .sc-3-header h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #ff7f32;
+    padding: 0 1vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+.section-3 .sc-3-sub-header {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+
+}
+
+.section-3 .sc-3-sub-header span {
+    font-style: italic;
+}
+
+
+.section-3 .sc-3-sub-header h2 {
+    font-size: 4.5vw;
+    font-family: font-2;
+    font-weight: 200;
+}
+
+.section-3 input {
+    width: 30vw;
+    height: 5vw;
+    background-color: transparent;
+    border-radius: 10px;
+    padding: 0 1.5vw;
+    font-size: 1.2vw;
+    outline: none;
+    border: 1px solid #000;
+    transition: all ease .5s;
+
+    margin-bottom: 40px;
+}
+
+.section-3 input::placeholder {
+    font-size: 2vw;
+    color: #a3a198;
+}
+
+.section-3 input:focus {
+    width: 60vw;
+
+}
+
+
+.section-3 p {
+    margin-bottom: 30px;
+    font-family: font-1;
+}
+
+.section-3 .btn-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.section-3 .btn-group .btn-new {
+    padding: 10px 20px;
+    background-color: #daeaff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    width: fit-content;
+    white-space: nowrap;
+    font-size: 1.8vw;
+    font-family: font-2;
+    transition: all ease .5s;
+}
+
+.section-3 .btn-group .btn-new:hover {
+    background-color: #a2c9fc;
+    cursor: pointer;
+}
+
+
+.section-4 {
+    width: 100%;
+    height: 200vh;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/adam-vradenburg-_gu7E90QChU-unsplash_1_1.webp?v=1771592855&width=2000%202000w");
+    position: relative;
+
+
+
+}
+
+.section-4 .sc-4-circle {
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 3%;
+    right: 5%;
+
+}
+
+.section-4 .sc-4-circle img {
+    width: 100%;
+    height: 100%;
+
+
+}
+
+
+.section-4 .sc-4-top {
+
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.section-4 .sc-4-top h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #a2c9fc;
+    padding: 0 1vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+.section-4 .sc-4-heading {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.section-4 .sc-4-heading h5 {
+    font-size: 10vw;
+    font-family: font-4;
+    color: #fff;
+}
+
+.section-4 .sc-4-disc {
+    width: 100%;
+    padding: 0 4vw;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.section-4 .sc-4-disc p {
+    font-size: 4vw;
+    font-weight: 200;
+    font-family: font-2;
+    color: #fff;
+}
+
+
+
+.section-4 .sc-4-sub-circles {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.section-4 .sc-4-sub-circles .sc-cir {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 20vw;
+    height: 30vh;
+    padding: 0 4vw;
+}
+
+.section-4 .sc-4-sub-circles .sc-cir .sc-img {
+    width: 15vh;
+    height: 15vh;
+}
+
+.section-4 .sc-4-sub-circles .sc-cir .sc-img img {
+    width: 100%;
+
+}
+
+.section-4 .sc-4-sub-circles .sc-cir .sc-cir-disc {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.section-4 .sc-4-sub-circles .sc-cir .sc-cir-disc p {
+    color: #fff;
+    font-family: font-1;
+}
+
+.section-4 .sc-4-btn {
+    padding: 1vw 4vh;
+    border-radius: 50px;
+    font-family: font-1;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #000;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    z-index: 1;
+}
+
+.section-4 .sc-4-btn:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+.section-4 .sc-4-btn::after {
+    content: "";
+    width: 0;
+    height: 100%;
+    background-color: #2a2857;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+    transition: width 0.5s ease;
+}
+
+.section-4 .sc-4-btn:hover::after {
+    width: 100%;
+}
+
+
+.section-5 {
+    width: 100%;
+    height: 100%;
+    background-color: #fbf9ec;
+    padding: 6vw 4vw;
+    border-top: 2px solid black;
+    overflow: hidden;
+
+}
+
+
+.section-5 .sc-5-top {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+    padding: 0 18vw;
+}
+
+.section-5 .sc-5-top h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #ff7f32;
+    padding: 0 1vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+.section-5 .sc-5-heading {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+    padding: 0 18vw;
+
+}
+
+
+.section-5 .sc-5-heading h5 {
+    font-size: 4.5vw;
+    font-family: font-2;
+    font-weight: 200;
+}
+
+
+.section-5  .review-cards {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin-bottom: 20px;
+    gap: 2vw;
+    transition: transform .5s ease;
+
+
+}
+
+.section-5  .review-cards .review-card {
+    width: 22vw;
+    aspect-ratio: 1 / 1.5;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 1vw;
+}
+
+.section-5  .review-cards .review-card .rc-disc{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5% 5%;
+    text-align: center;
+}
+
+.section-5  .review-cards .review-card .rc-disc h5{
+    font-family: font-2;
+    font-size: 2vw;
+    font-weight: 100;
+}
+
+.section-5  .review-cards .review-card .rc-disc p{
+    font-family: font-1;
+    font-size: 1vw;
+}
+
+.section-5  .review-cards .review-card .rc-footer{
+    width: 100%;
+    height: 20%;
+    border: 1px solid #000;
+    border-radius: 10px ;
+    display: flex;
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-left{
+    width:35%;
+    border-right: 1.5px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-left .img{
+    width: 5vw;
+    height: 5vw;
+    
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-left .img img{
+    width: 100%;
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-center{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1vw;
+
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-center h5{
+    font-family: font-3;
+    font-size: .8vw;
+    color: #fff;
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-right{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-right .fcf-btn{
+    padding: .5vw 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+    font-family: font-1;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+
+.section-5  .review-cards .review-card .rc-footer .fcf-right .fcf-btn:hover{
+   background-color: #2a2857;
+   border: 1px solid #ffffff;
+   color: #fff;
+   cursor: pointer;
+}
+
+.section-5  .rev-movment {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-5  .rev-movment .rev-left,
+.section-5  .rev-movment .rev-right {
+    width: 50px;
+    height: 50px;
+    background-color: #c1e4f8;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+
+}
+
+.section-5  .rev-movment .rev-left i,
+.section-5  .rev-movment .rev-right i {
+    font-size: 2vw;
+}
+
+.section-5  .rev-movment .rev-left:hover,
+.section-5  .rev-movment .rev-right:hover {
+    background-color: #ffb502;
+    cursor: pointer;
+}
+
+
+.section-6{
+    width: 100%;
+    min-height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+}
+
+.section-6 .sc-6-left,
+.section-6 .sc-6-right{
+    height: 100%;
+}
+
+
+.section-6 .sc-6-right{
+    background-color: #2a2857;
+    padding: 2vh;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    gap: 3vw;
+}
+
+.section-6 .sc-6-left img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.section-6 .sc-6-right h3{
+    font-size: 6.5vw;
+    font-family: font-2;
+    color: #ffffff;
+    font-weight: 200;
+}
+
+.section-6 .sc-6-right p{
+    font-size: 1.5vw;
+    font-family: font-1;
+    color: #ffffff;
+}
+
+.section-6 .sc-6-right .sc-6-btn{
+    width: 160px;
+    padding: 1vw 2vw;
+    background-color: #fff;
+    border: 1px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: font-1;
+    border-radius: 1vw;
+
+    transition: all ease .5s;
+}
+
+.section-6 .sc-6-right .sc-6-btn:hover{
+    
+    background-color: #2a2857;
+    border: 1px solid #fff;
+   color: #ffffff;
+   cursor: pointer;
+
+}
+
+
+
+.section-7{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding: 6vw 2vw 2vw 2vw;
+    background-color: #9f6429;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+}
+
+
+.sc-7-circle{
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+}
+
+.sc-7-circle img{
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.section-7 .sc-7-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    padding: 0 18vw;
+}
+
+.section-7 .sc-7-header h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #ffcb96;
+    padding: 0 1vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+.section-7 .sc-7-sub-heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 0 18vw;
+    
+
+}
+
+
+.section-7 .sc-7-sub-heading h5 {
+    font-size: 5vw;
+    font-family: font-4;
+    font-weight: 600;
+    color: #fff;
+}
+
+
+.section-7 .sc-7-sub-heading p{
+    font-size: 1vw;
+    font-family: font-1;
+    color: #fff;
+
+}
+
+.section-7 .sc-7-desc{
+    width: 100%;
+    height: 35vw;
+    background-color: #ffcb96;
+    border-radius: 1.5vw;
+    margin-top: 20px;
+    display: flex;
+    position: relative;
+    
+    
+}
+
+
+.section-7 .sc-7-desc .sc-7-image{
+    width: 50%;
+    height: 100%;
+     position: relative;
+}
+
+.section-7 .sc-7-desc .sc-7-image .img{
+    width: 30vw;
+   
+
+    position: absolute;
+    top: -10%;
+}
+
+.section-7 .sc-7-desc .sc-7-discription{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5vw;
+    padding: 0 5vw;
+    
+}
+
+
+
+.section-7 .sc-7-desc .sc-7-discription .sc-7-h {
+    width: 100%;
+    display: flex;
+    
+   
+}
+
+.section-7 .sc-7-desc .sc-7-discription .sc-7-h h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #f19f54;
+    padding: 0 .8vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+.section-7 .sc-7-desc .sc-7-discription h3{
+    font-family: font-2;
+    font-size: 5vw;
+    font-weight: 200;
+}
+
+.section-7 .sc-7-desc .sc-7-discription p{
+    font-family: font-3;
+    font-size: 1.5vw;
+    
+}
+
+.section-7 .sc-7-desc .sc-7-discription .sc-f-btn{
+    background-color: #fff;
+    width: 140px;
+    padding: 1vw 1.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    font-family: font-3;
+    position: relative;
+    border: 1px solid #000;
+    overflow: hidden;
+    z-index: 1;
+
+    transition: all ease .5s; 
+    
+}
+
+.section-7 .sc-7-desc .sc-7-discription .sc-f-btn:hover{
+    cursor: pointer;
+    color: #fff;
+    
+}
+
+.section-7 .sc-7-desc .sc-7-discription .sc-f-btn:after{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #2a2857;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    transition: all ease .5s; 
+
+}
+
+.section-7 .sc-7-desc .sc-7-discription .sc-f-btn:hover::after{
+    width: 100%;
+}
+
+
+
+
+.section-7 .sc-7-desc  .sc-7-shift {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+        padding: 0 2vw;
+}
+
+.section-7 .sc-7-desc .sc-7-shift .sc-f-l,
+.section-7 .sc-7-desc .sc-7-shift .sc-f-r{
+    width: 50px;
+    height: 50px;
+    background-color: #c1e4f8;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+
+}
+
+.section-7 .sc-7-desc  .sc-7-shift .sc-f-l i,
+.section-7 .sc-7-desc .sc-7-shift .sc-f-r i {
+    font-size: 2vw;
+}
+
+.section-7 .sc-7-desc .sc-7-shift .sc-f-l:hover,
+.section-7 .sc-7-desc  .sc-7-shift .sc-f-r:hover {
+    background-color: #ffb502;
+    cursor: pointer;
+}
+
+
+
+.section-8{
+    width: 100%;
+    height: 100%;
+   
+    padding: 6vw  2vw;
+    background-color: #fbf9ec;
+    position: relative;
+    
+}
+
+
+
+.section-8 .sc-8-header {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+    padding: 0 18vw;
+}
+
+.section-8 .sc-8-header h5 {
+    font-size: 4vw;
+    font-family: font-4;
+    background-color: #ffb502;
+    padding: 0 1vw;
+    border: 1px solid #000;
+    border-radius: 10px;
+    transform: rotate(-3deg);
+}
+
+.section-8 .sc-8-sub-heading {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin-bottom: 30px;
+    padding: 0 18vw;
+    
+
+}
+
+
+.section-8 .sc-8-sub-heading h5 {
+    font-size: 3.5vw;
+    font-family: font-2;
+    font-weight: 200;
+    
+}
+
+
+
+
+.section-8 .wraper-card{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-8 .sc-8-cards{
+    width: 100%;
+    display: flex;
+    gap: 2vw;
+    transition: transform .5s ease;
+}
+
+.section-8 .sc-8-cards .sc-8-card{
+    width: 30vw;
+    height: 35vw;
+    background-color: #2a2857;
+    flex-shrink: 0;
+    
+    border: 1px solid #000;
+}
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-head{
+    width: 100%;
+    height: 80%;
+    position: relative;
+    overflow: hidden;
+    
+    
+}
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-head .sc-8-card-box h5{
+    
+   font-size: 1.5vw;
+    font-family: font-4;
+    background-color: #ffffff;
+    padding: 0 .3vw;
+    border: 1px solid #000;
+    border-radius: .3vw;
+
+    position: absolute;
+    top: 2vw;
+    left: 2vw;
+    z-index: 1;
+    transition: all ease .5s;
+   
+
+}
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-head .sc-8-card-image {
+    width: 100%;
+    height: 100%;
+    
+    transition: all ease .5s;
+    
+}
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-head .sc-8-card-image img{
+    width: 100%;
+    height: 100%;
+    
+   
+    
+
+    
+    
+}
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-head:hover .sc-8-card-box h5{
+    transform: rotate(-10deg);
+}
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-head:hover .sc-8-card-image{
+    transform: scale(1.1);
+}
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-footer{
+    width: 100%;
+    height: 20%;
+    background-color: #c0dbff;
+    
+    border: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+.section-8 .sc-8-cards .sc-8-card .sc-8-card-footer h5{
+    
+    font-size: 1.2vw;
+    font-family: font-3;
+    font-weight: 200;
+}
+
+
+
+
+
+
+.section-8 .sc-8-move{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    padding: 0 2vw;
+    pointer-events: none;
+}
+
+.section-8 .sc-8-move .sc-8-l,
+.section-8 .sc-8-move .sc-8-r{
+    width: 50px;
+    height: 50px;
+    background-color: #c1e4f8;
+    border-radius: 50%;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    pointer-events: auto;
+}
+
+.section-8 .sc-8-move .sc-8-l i,
+.section-8 .sc-8-move .sc-8-r i{
+    font-size: 2vw;
+}
+
+.section-8 .sc-8-move .sc-8-l:hover,
+.section-8 .sc-8-move .sc-8-r:hover{
+    background-color: #ffb502;
+    cursor: pointer;
+}
+
+.section-8 .sc-8-btn-sec{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2vw;
+}
+
+.section-8 .sc-8-btn-sec .sc-8-btn{
+    width: 290px;
+    background-color: #2a2857;
+    padding: 1vw 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    color: #fff;
+    font-family: font-1;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    border: 1px solid #000;
+    transition: all ease .5s; 
+
+}
+
+
+.section-8 .sc-8-btn-sec .sc-8-btn:hover{
+    cursor: pointer;
+    color: #000000;
+    
+    
+}
+
+.section-8 .sc-8-btn-sec .sc-8-btn:after{
+    content: "";
+    width: 0%;
+    height: 100%;
+    background-color: #ffffff;
+    
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+
+    transition: all ease .5s; 
+    
+
+}
+
+.section-8 .sc-8-btn-sec .sc-8-btn:hover::after{
+    width: 100%;
+   
+}
+
+
+.section-9{
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 4vw;
+
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/Two_Leaves_Tea_Aug_25_Shoot-14x_SQ_1_d549e6bb-f1ad-4b36-a851-05e1af195a31.webp?v=1771593222&width=3600.0");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+.sc-9-card{
+    width: 35vw;
+    min-height: 42vw;
+
+    background-color: #f86d0a;
+
+    border: 1px solid #000;
+    border-radius: 20px;
+
+    padding: 3vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.sc-9-content{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3vw;
+}
+
+.sc-9-content h2{
+    font-size: 4.5vw;
+    font-family: font-2;
+    font-weight: 200;
+    color: #fff;
+    line-height: 1;
+}
+
+.sc-9-content p{
+    font-size: 1.3vw;
+    font-family: font-1;
+    color: #fff;
+    width: 90%;
+    line-height: 1.4;
+}
+
+.sc-9-btn{
+    width: 14vw;
+    padding: 1vw 0;
+
+    background-color: #fff;
+
+    border: 1px solid #000;
+    border-radius: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: font-3;
+    cursor: pointer;
+
+    transition: .4s;
+}
+
+.sc-9-btn:hover{
+    background-color: #2a2857;
+    color: #fff;
+}
+
+
+.section-10{
+    width: 100%;
+    padding: 4vw 14vw;
+    display: flex;
+    background-color: #c0dbff;
+}
+
+.section-10 .sc-10-left{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    
+
+}
+
+.section-10 .sc-10-left h3{
+    font-size: 3vw;
+    font-family: font-4;
+    font-weight: 300;
+
+}
+
+.section-10 .sc-10-left p{
+    font-size: 2.4vw;
+    font-family: font-2;
+    font-weight: 300;
+
+}
+
+
+.section-10 .sc-10-left .sc-input{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.section-10 .sc-10-left .sc-input input{
+    width: 25vw;
+    min-width: 280px;
+
+    height: 60px;
+
+    padding: 0 20px;
+
+    border: 1px solid #000;
+    border-radius: 10px;
+
+    font-size: 18px;
+    font-family: font-3;
+
+    outline: none;
+
+    transition: all .3s ease;
+}
+
+.section-10 .sc-10-left .sc-input input::placeholder{
+    font-size: 18px;
+    color: #8c8c8c;
+}
+
+.section-10 .sc-10-left .sc-input .sc-10-btn{
+    width: 10vw;
+    background-color: #2a2857;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: font-3;
+    font-size: 1.5vw;
+    border-radius: 2rem;
+    transition: all ease .5s;
+
+}
+
+.section-10 .sc-10-left .sc-input .sc-10-btn:hover{
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+
+}
+
+
+.section-10 .sc-10-right{
+    width: 50%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    gap: 2vw;
+
+}
+
+
+.section-10 .sc-10-right .sc-cir-social{
+    width: 3.5vw;
+    height: 3.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 50%;
+
+    transition: all ease .5s;
+
+}
+
+.section-10 .sc-10-right .sc-cir-social i{
+    font-size: 2vw;
+
+}
+
+.section-10 .sc-10-right .sc-cir-social:hover{
+    transform: scale(.9);
+    background-color: #ffffff;
+    cursor: pointer;
+
+}
+
+
+.section-11{
+    width: 100%;
+   
+     background-color: #c0dbff;
+     padding: 4vw;
+     
+}
+
+.section-11 .sc-11-links{
+    width: 100%;
+    height: 40vw;
+    background-color: #2a2857;
+    border-radius: 2vw;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2vw;
+   
+}
+
+.section-11 .sc-11-links .sc-11-list{
+    width: 20%;
+    color: #fff;
+}
+
+.section-11 .sc-11-links .sc-11-list h5{
+    font-size: 1.8vw;
+    font-family: font-2;
+    margin-bottom: 10px;
+    font-weight: 100;
+
+}
+
+.section-11 .sc-11-links .sc-11-list h4{
+    font-size: 1vw;
+    font-family: font-1;
+    color: #9290a1;
+    transition: all ease .5s;
+    width: fit-content;
+    
+
+    position: relative;
+    z-index: 1;
+
+}
+
+.section-11 .sc-11-links .sc-11-list h4:hover{
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.section-11 .sc-11-links .sc-11-list h4::after{
+    content: "";
+    width: 0%;
+    height: 1px;
+    
+    position: absolute;
+    background-color: #ffffff;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+
+    transition: all ease .5s;
+
+}
+
+.section-11 .sc-11-links .sc-11-list h4:hover::after{
+    width: 100%;
+}
+
+
+.section-12{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("https://www.twoleavestea.com/cdn/shop/files/footer-extended_1.png?v=1771834074");
+background-color: #c0dbff;
+background-position: center;
+background-size: cover;
+padding: 4vw;
+
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.section-12 .logo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.section-12 .logo img{
+    width: 20vw;
+    
+}
+
+.section-12 .sc-12-footer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: font-3;
+}
